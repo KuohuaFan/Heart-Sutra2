@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>心經 · 七分本</title>
+<meta name="description" content="《般若波羅蜜多心經》玄奘譯本，分七分閱讀，附白話、要義與朗讀。">
+
+<!-- ════════════════════════════════════════════════════════════
+     Facebook 分享設定：請把下面兩處 REPLACE-ME.github.io
+     改成您實際的網址（例如 kuohuafan.github.io），否則分享
+     卡片不會出現封面圖。改完重新上傳即可。
+     ════════════════════════════════════════════════════════════ -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="般若波羅蜜多心經">
+<meta property="og:title" content="般若波羅蜜多心經">
+<meta property="og:description" content="玄奘譯本全文二百六十字，分七分逐段呈現，附白話語譯、要義提點與朗讀。">
+<meta property="og:url" content="https://REPLACE-ME.github.io/">
+<meta property="og:image" content="https://REPLACE-ME.github.io/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="般若波羅蜜多心經 · 唐三藏法師玄奘譯">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="般若波羅蜜多心經">
+<meta name="twitter:description" content="玄奘譯本全文二百六十字，分七分逐段呈現。">
+<meta name="twitter:image" content="https://REPLACE-ME.github.io/cover.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5EFE3;
+  --bg-soft:#EFE8DA;
+  --card:#FCFAF4;
+  --ink:#1F1D1A;
+  --ink-2:#6B655B;
+  --ink-3:#9A9287;
+  --gold:#94762D;
+  --gold-soft:#E3D8BC;
+  --line:#E2D9C5;
+  --serif:'Noto Serif TC',serif;
+  --sans:'Noto Sans TC',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--serif);background:var(--bg);color:var(--ink);
+  -webkit-font-smoothing:antialiased;line-height:1.9;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+button{font-family:inherit;cursor:pointer;background:none;border:none;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+svg{display:block}
+
+/* ── 首頁 ── */
+body:not(.reading) .topbar,
+body:not(.reading) main,
+body:not(.reading) .footnav,
+body:not(.reading) footer,
+body:not(.reading) .fab,
+body:not(.reading) .chat{display:none}
+body.reading .home{display:none}
+.home{
+  min-height:100svh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:4rem 1.5rem 3rem;
+}
+.home .bookicon{color:var(--gold);margin-bottom:2.4rem}
+.home h1{font-size:clamp(2rem,8.5vw,2.9rem);font-weight:700;letter-spacing:.09em;line-height:1.4}
+.home .divider{width:9.5rem;height:1px;background:var(--gold-soft);margin:1.7rem 0 1.5rem}
+.home .translator{color:var(--ink-2);font-size:1rem;letter-spacing:.06em}
+.home .intro{
+  max-width:33rem;margin-top:2.3rem;font-size:1.02rem;
+  line-height:2.35;text-align:justify;color:#33302B;
+}
+.home .start{
+  margin-top:2.9rem;background:var(--gold);color:#FFF9EA;border-radius:8px;
+  padding:1rem 2.3rem;font-size:1.08rem;display:inline-flex;align-items:center;gap:.75rem;
+}
+.home .start:hover{background:#7E6425}
+.home .stat{margin-top:5.5rem}
+.home .stat b{display:block;font-size:1.95rem;color:var(--gold);font-weight:700;letter-spacing:.2em}
+.home .stat small{font-family:var(--sans);font-size:.85rem;color:var(--ink-3);letter-spacing:.08em}
+
+/* ── 頂部列 ── */
+.topbar{
+  position:sticky;top:0;z-index:60;background:var(--bg-soft);
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:.6rem;
+  padding:.85rem 1rem;
+}
+.iconbtn{width:2.2rem;height:2.2rem;display:grid;place-items:center;border-radius:6px;color:var(--ink)}
+.iconbtn:hover{background:rgba(148,118,45,.1)}
+.topbar .title{
+  display:flex;align-items:center;gap:.55rem;font-size:1.12rem;font-weight:700;
+  letter-spacing:.03em;flex:1;min-width:0;
+}
+.topbar .title span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.topbar .title svg{color:var(--gold);flex-shrink:0}
+.pager{display:flex;align-items:center;gap:.15rem;color:var(--gold);flex-shrink:0}
+.pager .num{font-family:var(--sans);font-size:.9rem;color:var(--ink-2);min-width:3.1rem;text-align:center}
+.pager button:disabled{opacity:.3;cursor:default}
+
+/* ── 目錄抽屜 ── */
+.scrim{position:fixed;inset:0;background:rgba(31,29,26,.45);z-index:70;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{
+  position:fixed;top:0;left:0;bottom:0;width:min(19rem,82vw);z-index:80;
+  background:var(--card);border-right:1px solid var(--line);
+  transform:translateX(-101%);transition:transform .28s ease;
+  display:flex;flex-direction:column;
+}
+.drawer.open{transform:none}
+.drawer h2{
+  font-size:.78rem;font-family:var(--sans);font-weight:500;letter-spacing:.28em;
+  color:var(--gold);padding:1.5rem 1.4rem .9rem;
+}
+.drawer ol{list-style:none;overflow-y:auto;padding-bottom:2rem}
+.drawer li button{
+  display:block;width:100%;text-align:left;padding:.85rem 1.4rem;
+  border-left:3px solid transparent;font-size:1rem;
+}
+.drawer li button small{display:block;font-family:var(--sans);font-size:.72rem;color:var(--ink-3);margin-top:.2rem}
+.drawer li button:hover{background:var(--bg-soft)}
+.drawer li button[aria-current="true"]{border-left-color:var(--gold);color:var(--gold);background:var(--bg-soft)}
+
+/* ── 主體 ── */
+main{max-width:44rem;margin:0 auto;padding:2.5rem 1.15rem 1rem}
+.part-title{text-align:center;font-size:clamp(1.55rem,5.6vw,2.1rem);font-weight:700;letter-spacing:.06em}
+.rule{width:8.5rem;height:1px;background:var(--gold-soft);margin:1.05rem auto 1.8rem}
+
+.toolrow{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:1.5rem}
+.segmented{display:flex;gap:.15rem;background:var(--bg-soft);border-radius:9px;padding:.28rem}
+.seg{width:2.9rem;height:2.4rem;display:grid;place-items:center;border-radius:7px;color:var(--ink-2);transition:.2s}
+.seg[aria-selected="true"]{background:var(--gold);color:#FFF9EA}
+.seg:not([aria-selected="true"]):hover{background:rgba(148,118,45,.12)}
+.speak{
+  display:grid;place-items:center;width:3.2rem;height:2.9rem;border-radius:9px;
+  border:1px solid var(--gold-soft);color:var(--gold);transition:.2s;
+}
+.speak:hover{background:rgba(148,118,45,.1)}
+.speak.on{background:var(--gold);color:#FFF9EA;border-color:var(--gold)}
+
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:1.9rem 1.5rem;box-shadow:0 1px 2px rgba(31,29,26,.03);
+}
+.card .attrib{font-family:var(--sans);font-size:.8rem;color:var(--ink-3);margin-bottom:1.25rem;letter-spacing:.06em}
+.scripture{font-size:1.19rem;line-height:2.45;text-align:justify;letter-spacing:.02em}
+.scripture s0{display:inline;border-radius:3px;transition:background .25s}
+.scripture s0.now{background:rgba(148,118,45,.18)}
+.vern{font-size:1.03rem;line-height:2.25;color:#33302B;text-align:justify}
+.vern .caveat{display:block;margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid var(--line);font-family:var(--sans);font-size:.78rem;line-height:1.95;color:var(--ink-3)}
+.essence{list-style:none;display:flex;flex-direction:column;gap:1.15rem}
+.essence li{display:flex;gap:.85rem;font-size:1rem;line-height:2.1}
+.essence i{
+  flex-shrink:0;width:1.55rem;height:1.55rem;margin-top:.35rem;border-radius:50%;
+  background:var(--gold-soft);color:var(--gold);
+  display:grid;place-items:center;font-style:normal;
+  font-family:var(--sans);font-size:.72rem;font-weight:500;
+}
+.essence b{color:var(--gold);font-weight:500}
+
+/* ── 底部導覽 ── */
+.footnav{max-width:44rem;margin:0 auto;padding:0 1.15rem}
+.footnav hr{border:none;border-top:1px solid var(--line);margin:2.5rem 0 1.6rem}
+.navrow{display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+.navbtn{
+  display:flex;align-items:center;gap:.45rem;border:1px solid var(--gold-soft);
+  color:var(--gold);border-radius:9px;padding:.72rem 1.05rem;font-size:.95rem;
+}
+.navbtn:hover:not(:disabled){background:rgba(148,118,45,.1)}
+.navbtn:disabled{opacity:.32;cursor:default}
+.navrow .count{font-family:var(--sans);font-size:.88rem;color:var(--ink-2)}
+.readall{
+  display:flex;align-items:center;justify-content:center;gap:.55rem;
+  margin:1.4rem auto 0;border:1px solid var(--gold-soft);color:var(--gold);
+  border-radius:9px;padding:.8rem 1.5rem;font-size:1rem;
+}
+.readall:hover{background:rgba(148,118,45,.1)}
+.readall.on{background:var(--gold);color:#FFF9EA;border-color:var(--gold)}
+
+footer{
+  max-width:44rem;margin:2.6rem auto 0;padding:1.7rem 1.15rem 3.5rem;
+  border-top:1px solid var(--line);text-align:center;
+}
+footer .src{font-family:var(--sans);font-size:.78rem;color:var(--ink-3);line-height:2}
+footer .verse{margin-top:.9rem;font-size:.95rem;color:var(--gold);letter-spacing:.1em}
+
+/* ── 問答 ── */
+.fab{
+  position:fixed;right:1.05rem;bottom:1.15rem;z-index:65;
+  width:3.6rem;height:3.6rem;border-radius:50%;background:var(--gold);color:#FFF9EA;
+  display:grid;place-items:center;box-shadow:0 6px 18px rgba(31,29,26,.22);
+}
+.fab:hover{background:#7E6425}
+.chat{
+  position:fixed;right:1.05rem;bottom:1.15rem;z-index:90;
+  width:min(23rem,calc(100vw - 2.1rem));height:min(31rem,calc(100vh - 5rem));
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 14px 40px rgba(31,29,26,.25);
+  display:flex;flex-direction:column;overflow:hidden;
+}
+.chat[hidden]{display:none}
+.chat header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.85rem 1rem;border-bottom:1px solid var(--line);background:var(--bg-soft);
+}
+.chat header b{font-size:.95rem;font-weight:500}
+.chat header small{display:block;font-family:var(--sans);font-size:.68rem;color:var(--ink-3);margin-top:.15rem}
+.log{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.85rem}
+.msg{font-size:.9rem;line-height:1.95;padding:.7rem .9rem;border-radius:10px;max-width:88%;white-space:pre-wrap}
+.msg.me{align-self:flex-end;background:var(--gold);color:#FFF9EA}
+.msg.ai{align-self:flex-start;background:var(--bg-soft);border:1px solid var(--line)}
+.msg.sys{align-self:stretch;max-width:100%;background:none;border:1px dashed var(--line);color:var(--ink-2);font-family:var(--sans);font-size:.8rem}
+.composer{display:flex;gap:.5rem;padding:.75rem;border-top:1px solid var(--line)}
+.composer input{
+  flex:1;font-family:var(--sans);font-size:.9rem;padding:.6rem .75rem;
+  border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);
+}
+.composer button{background:var(--gold);color:#FFF9EA;border-radius:8px;padding:0 .95rem;font-size:.88rem}
+.composer button:disabled{opacity:.45;cursor:default}
+</style>
+</head>
+<body>
+
+<section class="home" id="home">
+  <svg class="bookicon" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M2 5h7a3 3 0 0 1 3 3v11a2.5 2.5 0 0 0-2.5-2.5H2zM22 5h-7a3 3 0 0 0-3 3v11a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+  <h1>般若波羅蜜多心經</h1>
+  <div class="divider"></div>
+  <p class="translator">唐三藏法師玄奘 譯</p>
+  <p class="intro">《般若波羅蜜多心經》簡稱《心經》，全文僅二百六十字，是般若部經典的綱要。經以觀自在菩薩照見五蘊皆空為起點，層層遣除對五蘊、十八界、十二因緣、四聖諦的執取，終歸於「以無所得故」而心無罣礙。經中「色即是空，空即是色」、「心無罣礙，無有恐怖」二語，千百年來為漢傳佛教持誦最廣。</p>
+  <button class="start" id="startBtn">開始閱讀
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+  </button>
+  <div class="stat"><b>七分</b><small>完整原文逐分呈現</small></div>
+</section>
+
+<div class="topbar">
+  <button class="iconbtn" id="menuBtn" aria-label="開啟目錄" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+  <div class="title">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M2 5h7a3 3 0 0 1 3 3v11a2.5 2.5 0 0 0-2.5-2.5H2zM22 5h-7a3 3 0 0 0-3 3v11a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+    <span>般若波羅蜜多心經</span>
+  </div>
+  <div class="pager">
+    <button class="iconbtn" id="prevTop" aria-label="上一分">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <span class="num" id="pageNum">1 / 7</span>
+    <button class="iconbtn" id="nextTop" aria-label="下一分">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<nav class="drawer" id="drawer" aria-label="目錄">
+  <h2>目錄 · 全經七分</h2>
+  <ol id="tocList"></ol>
+</nav>
+
+<main>
+  <h1 class="part-title" id="partTitle"></h1>
+  <div class="rule"></div>
+
+  <div class="toolrow">
+    <div class="segmented" role="tablist" aria-label="閱讀模式">
+      <button class="seg" role="tab" data-mode="text" aria-selected="true" aria-label="原文" title="原文">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M2 5h7a3 3 0 0 1 3 3v11a2.5 2.5 0 0 0-2.5-2.5H2zM22 5h-7a3 3 0 0 0-3 3v11a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      </button>
+      <button class="seg" role="tab" data-mode="vern" aria-selected="false" aria-label="白話" title="白話">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3 1.2-4.2A8 8 0 1 1 21 12z"/></svg>
+      </button>
+      <button class="seg" role="tab" data-mode="key" aria-selected="false" aria-label="要義" title="要義">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 1 3.5 10.9c-.5.4-.8 1-.8 1.6H9.3c0-.6-.3-1.2-.8-1.6A6 6 0 0 1 12 3z"/></svg>
+      </button>
+    </div>
+    <button class="speak" id="speakBtn" aria-label="朗讀本分">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4zM17 8.5a5 5 0 0 1 0 7M19.8 6a8.5 8.5 0 0 1 0 12"/></svg>
+    </button>
+  </div>
+
+  <article class="card" id="card"></article>
+</main>
+
+<div class="footnav">
+  <hr>
+  <div class="navrow">
+    <button class="navbtn" id="prevBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      上一分
+    </button>
+    <span class="count" id="pageNum2">1 / 7</span>
+    <button class="navbtn" id="nextBtn">
+      下一分
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+  <button class="readall" id="readAllBtn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg>
+    <span>從此分開始全文朗讀</span>
+  </button>
+</div>
+
+<footer>
+  <p class="src">原文：唐 · 玄奘 譯本　·　白話文與要義：本站自撰</p>
+  <p class="verse">揭諦揭諦，波羅揭諦，波羅僧揭諦，菩提薩婆訶</p>
+</footer>
+
+<button class="fab" id="fab" aria-label="開啟經義問答">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3 1.2-4.2A8 8 0 1 1 21 12z"/></svg>
+</button>
+
+<section class="chat" id="chat" hidden aria-label="經義問答">
+  <header>
+    <div><b>經義問答</b><small>就本經提問，回覆僅供參考</small></div>
+    <button class="iconbtn" id="chatClose" aria-label="關閉問答">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </header>
+  <div class="log" id="chatLog"></div>
+  <div class="composer">
+    <input id="chatInput" placeholder="例如：何謂五蘊皆空？" autocomplete="off">
+    <button id="chatSend">送出</button>
+  </div>
+</section>
+
+<script>
+/* ═══ 經文資料：七分 ═══ */
+const PARTS=[
+{
+ no:'第一分',name:'總綱分',
+ text:'觀自在菩薩，行深般若波羅蜜多時，照見五蘊皆空，度一切苦厄。',
+ vern:'觀自在菩薩在深入般若波羅蜜多的修行時，以智慧照見構成身心的五類要素——物質、感受、想像、造作、認識——本性都是空，因而超越了一切苦難。',
+ key:[
+  ['行深','般若不是知識，是行處。「行深」二字先定調：以下所說皆從實修的觀照而來，非由推論而得。'],
+  ['照見','「照」是智慧的直接現量，不是眼見，也不是思辨。所照的對象是五蘊，不是外境。'],
+  ['度一切苦厄','全經的結論其實在第一分已經說盡，後六分是這一句的展開與證成。']
+ ]
+},
+{
+ no:'第二分',name:'色空分',
+ text:'舍利子，色不異空，空不異色，色即是空，空即是色。受想行識，亦復如是。',
+ vern:'舍利子啊，物質現象與空性並不是兩件事：物質不異於空，空也不異於物質；物質當體即是空，空也正顯現為物質。感受、想像、造作、認識這四者，道理完全相同。',
+ key:[
+  ['前二句破二元','「不異」是遮詮，破除把色與空看成兩物的見解。'],
+  ['後二句破離色求空','「即是」是表詮，破除離開現象另求一個空的見解。空不在色之外。'],
+  ['亦復如是','四句推及受想行識，第一分「五蘊皆空」的「皆」字至此才有著落。']
+ ]
+},
+{
+ no:'第三分',name:'本體分',
+ text:'舍利子，是諸法空相，不生不滅，不垢不淨，不增不減。是故空中無色，無受想行識，無眼耳鼻舌身意，無色聲香味觸法，無眼界，乃至無意識界。',
+ vern:'舍利子啊，一切存在的空性樣貌是這樣的：不生起也不消滅，不染污也不清淨，不增添也不減損。因此在空性之中，沒有可執取的物質，也沒有感受、想像、造作、認識；沒有眼耳鼻舌身意六種感官，沒有色聲香味觸法六種對象；從眼所對的境界一路推到意識的境界，都沒有可執取的自性。',
+ key:[
+  ['六不','所否定的是加在空性上的相對規定——生滅、垢淨、增減，不是否定現象的存在。'],
+  ['範圍層層擴大','由五蘊而六根、六塵，再及十八界，否定的範圍從身心構成推到整個認識活動。'],
+  ['乃至','以「乃至」省略中間十六界，是漢譯經文常見的省文之例，非有闕漏。']
+ ]
+},
+{
+ no:'第四分',name:'妙用分',
+ text:'無無明，亦無無明盡，乃至無老死，亦無老死盡。無苦集滅道，無智亦無得。以無所得故，菩提薩埵，依般若波羅蜜多故，心無罣礙，無罣礙故，無有恐怖，遠離顛倒夢想，究竟涅槃。',
+ vern:'沒有無明，也沒有無明的滅盡；一路推到沒有老死，也沒有老死的滅盡。沒有苦、集、滅、道四諦可執，沒有智慧可恃，也沒有果位可得。正因為無所得，菩薩依般若波羅蜜多而行，心中沒有牽掛障礙；沒有牽掛障礙，所以沒有恐懼，遠離顛倒的認知與虛妄的想像，終究達到寂滅安穩的涅槃。',
+ key:[
+  ['連能修所證一併遣除','十二因緣為緣覺所依，四聖諦為聲聞所依，此處不否定其為法門，而是否定對它們的執取。'],
+  ['以無所得故','全經樞紐。此句之前層層是破，此句之後轉而立；不先破盡，立處無從安放。'],
+  ['四階次第','心無罣礙、無有恐怖、遠離顛倒夢想、究竟涅槃，是有先後的四層推進，非並列。']
+ ]
+},
+{
+ no:'第五分',name:'果德分',
+ text:'三世諸佛，依般若波羅蜜多故，得阿耨多羅三藐三菩提。',
+ vern:'過去、現在、未來三世的一切佛，都是依般若波羅蜜多而證得無上正等正覺。',
+ key:[
+  ['由菩薩而諸佛','前分說菩薩所得的離怖畏，此分說諸佛所證的最高果位，位次遞進。'],
+  ['三世','涵蓋時間的全域，說明般若非一時一佛的方便，故稱般若為諸佛之母。'],
+  ['阿耨多羅三藐三菩提','梵語 Anuttara-samyak-saṃbodhi 的音譯，意為無上正等正覺。']
+ ]
+},
+{
+ no:'第六分',name:'證知分',
+ text:'故知般若波羅蜜多，是大神咒，是大明咒，是無上咒，是無等等咒，能除一切苦，真實不虛。故說般若波羅蜜多咒，即說咒曰：',
+ vern:'所以應當知道，般若波羅蜜多是妙用無方的大神咒，是破除無明的大明咒，是至高無上的無上咒，是無可比擬的無等等咒，能夠除滅一切苦，真實而不虛妄。所以宣說般若波羅蜜多咒，咒文如下：',
+ key:[
+  ['四咒遞進','神言其用，明言其破無明，無上言其位，無等等言其無可比擬，由用而體而位而較，層層而上。'],
+  ['能除一切苦','回扣第一分的「度一切苦厄」，全經首尾相合。'],
+  ['即說咒曰','此句是承上啟下的轉語，若略去，第七分的咒文便無所繫屬。']
+ ]
+},
+{
+ no:'第七分',name:'秘密分',
+ text:'揭諦揭諦，波羅揭諦，波羅僧揭諦，菩提薩婆訶。',
+ vern:'咒語依古例存音不譯。若勉強以義相參，大致是：去吧，去吧，向彼岸去，一同向彼岸去，覺悟成就。此僅供參解，持誦仍以音為準。',
+ key:[
+  ['秘密故不翻','玄奘五種不翻之首即為「秘密故」，咒語存其梵音而不作意譯，此分因而名為秘密分。'],
+  ['顯密同一事','前六分是顯說般若，此分是密說般若，所說並非兩法。'],
+  ['羅馬轉寫','gate gate pāragate pārasaṃgate bodhi svāhā。']
+ ]
+}
+];
+
+/* ═══ 狀態 ═══ */
+let page=0,mode='text',speaking=false,continuous=false,seq=0;
+const $=id=>document.getElementById(id);
+const card=$('card');
+
+/* ═══ 目錄 ═══ */
+(function(){
+  const ol=$('tocList');
+  PARTS.forEach((p,i)=>{
+    const li=document.createElement('li'),b=document.createElement('button');
+    const t=document.createTextNode(p.no+'　'+p.name);
+    const s=document.createElement('small');s.textContent=p.text.slice(0,14)+'…';
+    b.append(t,s);
+    b.addEventListener('click',()=>{go(i);closeDrawer();});
+    li.appendChild(b);ol.appendChild(li);
+  });
+})();
+function openDrawer(){$('drawer').classList.add('open');$('scrim').classList.add('open');$('menuBtn').setAttribute('aria-expanded','true');}
+function closeDrawer(){$('drawer').classList.remove('open');$('scrim').classList.remove('open');$('menuBtn').setAttribute('aria-expanded','false');}
+$('menuBtn').addEventListener('click',()=>$('drawer').classList.contains('open')?closeDrawer():openDrawer());
+$('scrim').addEventListener('click',closeDrawer);
+
+/* ═══ 渲染 ═══ */
+function splitSentences(t){
+  const out=[];let buf='';
+  for(const c of t){buf+=c;if('。：！？'.includes(c)){out.push(buf);buf='';}}
+  if(buf)out.push(buf);
+  return out;
+}
+function render(){
+  const p=PARTS[page];
+  $('partTitle').textContent=p.no+' '+p.name;
+  $('pageNum').textContent=(page+1)+' / '+PARTS.length;
+  $('pageNum2').textContent=(page+1)+' / '+PARTS.length;
+  $('prevTop').disabled=$('prevBtn').disabled=(page===0);
+  $('nextTop').disabled=$('nextBtn').disabled=(page===PARTS.length-1);
+  document.querySelectorAll('#tocList button').forEach((b,i)=>b.setAttribute('aria-current',i===page));
+  document.querySelectorAll('.seg').forEach(s=>s.setAttribute('aria-selected',s.dataset.mode===mode));
+
+  card.innerHTML='';
+  if(mode==='text'){
+    const a=document.createElement('p');a.className='attrib';a.textContent='唐 · 玄奘 譯';
+    const d=document.createElement('div');d.className='scripture';
+    splitSentences(p.text).forEach(s=>{const e=document.createElement('s0');e.textContent=s;d.appendChild(e);});
+    card.append(a,d);
+  }else if(mode==='vern'){
+    const a=document.createElement('p');a.className='attrib';a.textContent='白話語譯 · 本站自撰';
+    const d=document.createElement('div');d.className='vern';d.textContent=p.vern;
+    const c=document.createElement('span');c.className='caveat';
+    c.textContent='語譯僅為理解之助，非權威定本。經義以原文為準，深究請依歷代註疏。';
+    d.appendChild(c);card.append(a,d);
+  }else{
+    const a=document.createElement('p');a.className='attrib';a.textContent='要義提點 · 共 '+p.key.length+' 則';
+    const ul=document.createElement('ul');ul.className='essence';
+    p.key.forEach((k,i)=>{
+      const li=document.createElement('li');
+      const n=document.createElement('i');n.textContent=i+1;
+      const s=document.createElement('span');
+      const b=document.createElement('b');b.textContent=k[0]+'　';
+      s.append(b,document.createTextNode(k[1]));
+      li.append(n,s);ul.appendChild(li);
+    });
+    card.append(a,ul);
+  }
+}
+function go(i){
+  if(i<0||i>=PARTS.length)return;
+  if(!continuous)stopSpeak();
+  page=i;render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$('prevTop').addEventListener('click',()=>go(page-1));
+$('nextTop').addEventListener('click',()=>go(page+1));
+$('prevBtn').addEventListener('click',()=>go(page-1));
+$('nextBtn').addEventListener('click',()=>go(page+1));
+document.querySelectorAll('.seg').forEach(s=>s.addEventListener('click',()=>{stopSpeak();mode=s.dataset.mode;render();}));
+
+/* ═══ 朗讀 ═══ */
+function pickVoice(){
+  if(!('speechSynthesis' in window))return null;
+  const vs=speechSynthesis.getVoices();
+  return vs.find(v=>/zh[-_]TW/i.test(v.lang))||vs.find(v=>/zh|Chinese/i.test(v.lang+v.name))||null;
+}
+function utter(text){
+  return new Promise(res=>{
+    const guardMs=Math.max(1500,text.length*340);
+    if(!('speechSynthesis' in window)){setTimeout(res,guardMs);return;}
+    let done=false;const fin=()=>{if(!done){done=true;res();}};
+    const u=new SpeechSynthesisUtterance(text);
+    u.lang='zh-TW';u.rate=.88;u.pitch=.96;
+    const v=pickVoice();if(v)u.voice=v;
+    u.onend=fin;u.onerror=()=>setTimeout(fin,250);
+    speechSynthesis.speak(u);
+    setTimeout(fin,guardMs*2.6);
+  });
+}
+async function readPart(){
+  const my=++seq;speaking=true;syncSpeakUI();
+  while(speaking&&seq===my){
+    if(mode!=='text'){mode='text';render();}
+    const nodes=Array.prototype.slice.call(card.querySelectorAll('s0'));
+    for(const n of nodes){
+      if(!speaking||seq!==my)return;
+      nodes.forEach(x=>x.classList.remove('now'));
+      n.classList.add('now');
+      await utter(n.textContent);
+    }
+    if(!speaking||seq!==my)return;
+    card.querySelectorAll('s0').forEach(x=>x.classList.remove('now'));
+    if(continuous&&page<PARTS.length-1){
+      page++;render();window.scrollTo({top:0,behavior:'smooth'});
+      await new Promise(r=>setTimeout(r,700));
+    }else{stopSpeak();return;}
+  }
+}
+function stopSpeak(){
+  speaking=false;continuous=false;seq++;
+  if('speechSynthesis' in window)speechSynthesis.cancel();
+  card.querySelectorAll('s0').forEach(x=>x.classList.remove('now'));
+  syncSpeakUI();
+}
+function syncSpeakUI(){
+  $('speakBtn').classList.toggle('on',speaking&&!continuous);
+  const ra=$('readAllBtn');
+  ra.classList.toggle('on',speaking&&continuous);
+  ra.querySelector('span').textContent=(speaking&&continuous)?'停止全文朗讀':'從此分開始全文朗讀';
+  $('speakBtn').setAttribute('aria-label',speaking?'停止朗讀':'朗讀本分');
+}
+$('speakBtn').addEventListener('click',()=>{
+  if(speaking){stopSpeak();return;}
+  continuous=false;if(mode!=='text'){mode='text';render();}
+  readPart();
+});
+$('readAllBtn').addEventListener('click',()=>{
+  if(speaking&&continuous){stopSpeak();return;}
+  stopSpeak();continuous=true;
+  if(mode!=='text'){mode='text';render();}
+  readPart();
+});
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=pickVoice;}
+window.addEventListener('pagehide',stopSpeak);
+
+/* ═══ 問答 ═══ */
+const SUTRA_FULL=PARTS.map(p=>p.no+' '+p.name+'：'+p.text).join('\n');
+let history=[],busy=false;
+function addMsg(cls,text){
+  const d=document.createElement('div');d.className='msg '+cls;d.textContent=text;
+  $('chatLog').appendChild(d);$('chatLog').scrollTop=$('chatLog').scrollHeight;
+  return d;
+}
+$('fab').addEventListener('click',()=>{
+  $('chat').hidden=false;$('fab').style.display='none';
+  if(!$('chatLog').children.length){
+    addMsg('ai','請就《心經》提問。可以問字句、分判、名相，也可以問某一分在說什麼。');
+  }
+  $('chatInput').focus();
+});
+$('chatClose').addEventListener('click',()=>{$('chat').hidden=true;$('fab').style.display='grid';});
+async function send(){
+  const inp=$('chatInput'),q=inp.value.trim();
+  if(!q||busy)return;
+  inp.value='';addMsg('me',q);
+  busy=true;$('chatSend').disabled=true;
+  const thinking=addMsg('ai','……');
+  history.push({role:'user',content:q});
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-6',max_tokens:1000,
+        system:'你是《般若波羅蜜多心經》的解經助手。全經玄奘譯本如下，分為七分：\n'+SUTRA_FULL+
+          '\n\n規則：一律以繁體中文台灣用語回答。回答限於本經及相關佛學名相，其他話題請婉拒。引用經文時註明第幾分。屬於某家之言的傳統說法要明說，不要冒充定論。回答控制在三百字內，不使用表格。',
+        messages:history.slice(-10)
+      })
+    });
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const data=await r.json();
+    const txt=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('\n').trim();
+    thinking.textContent=txt||'未取得回覆，請再問一次。';
+    history.push({role:'assistant',content:txt});
+  }catch(e){
+    thinking.remove();history.pop();
+    addMsg('sys','問答功能無法連線。此功能需在原發布環境中執行；若您是自行架設本頁，須自備後端或改為靜態問答。經文、白話與要義不受影響，仍可正常閱讀。');
+  }finally{busy=false;$('chatSend').disabled=false;}
+}
+$('chatSend').addEventListener('click',send);
+$('chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')send();});
+
+/* ═══ 首頁 / 閱讀頁切換 ═══ */
+function enterReading(){
+  document.body.classList.add('reading');
+  page=0;mode='text';render();
+  window.scrollTo({top:0,behavior:'auto'});
+}
+function backHome(){
+  stopSpeak();closeDrawer();
+  $('chat').hidden=true;$('fab').style.display='grid';
+  document.body.classList.remove('reading');
+  window.scrollTo({top:0,behavior:'auto'});
+}
+$('startBtn').addEventListener('click',enterReading);
+document.querySelector('.topbar .title').addEventListener('click',backHome);
+document.querySelector('.topbar .title').style.cursor='pointer';
+document.querySelector('.topbar .title').title='回首頁';
+
+/* ═══ 鍵盤 ═══ */
+document.addEventListener('keydown',e=>{
+  if(document.activeElement===$('chatInput'))return;
+  if(!document.body.classList.contains('reading')){
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();enterReading();}
+    return;
+  }
+  if(e.key==='ArrowRight')go(page+1);
+  else if(e.key==='ArrowLeft')go(page-1);
+  else if(e.key==='Escape'){
+    if($('drawer').classList.contains('open')){closeDrawer();return;}
+    if(!$('chat').hidden){$('chatClose').click();return;}
+    backHome();
+  }
+});
+
+render();
+</script>
+</body>
+</html>
